@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Угадай число</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Угадай число (1–100)</h1>
+        <p>Привет, {{ username }}!</p>
+        <p><strong>Попыток:</strong> {{ attempts }}</p>
+        {% if message %}
+            <p class="message">{{ message }}</p>
+        {% endif %}
+        <form method="POST">
+            <input type="number" name="guess" min="1" max="100" required>
+            <button type="submit">Угадать</button>
+        </form>
+        <form action="{{ url_for('reset') }}">
+            <button type="submit" class="reset">Начать заново</button>
+        </form>
+        <h2>🏆 Таблица рекордов:</h2>
+        <ul>
+            {% for score in highscores %}
+                <li>{{ score.name }} — {{ score.attempts }} попыток ({{ score.time }})</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

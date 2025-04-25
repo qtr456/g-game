@@ -1,0 +1,28 @@
+body {
+    font-family: sans-serif;
+    background: linear-gradient(to right, #a8edea, #fed6e3);
+    text-align: center;
+    padding: 50px;
+}
+.container {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 400px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+input, button {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px;
+}
+.message {
+    font-size: 20px;
+    color: #ff4081;
+}
+.reset {
+    background: #ff4081;
+    color: white;
+    border: none;
+}
